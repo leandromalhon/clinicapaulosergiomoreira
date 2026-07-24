@@ -33,11 +33,6 @@ const services = [
     image: '/images/service-prosthetics.png',
   },
   {
-    title: 'Odontologia Estética',
-    description: 'Harmonização e recuperação do seu sorriso.',
-    image: '/images/service-cosmetic.png',
-  },
-  {
     title: 'Clareamento',
     description: 'Dentes mais brancos com técnicas seguras.',
     image: '/images/service-whitening.png',

@@ -45,7 +45,7 @@ export function Team() {
           {team.map((member) => (
             <article
               key={member.name}
-              className="overflow-hidden rounded-2xl border border-border bg-background transition-shadow hover:shadow-md"
+              className="group overflow-hidden rounded-2xl border border-border bg-background transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-secondary">
                 <Image
@@ -53,7 +53,7 @@ export function Team() {
                   alt={`Retrato de ${member.name}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-col gap-1 p-5">
