@@ -1,8 +1,6 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 const PERIOD_LABELS: Record<string, string> = {
   morning: 'Manhã',
   afternoon: 'Tarde',
@@ -20,14 +18,30 @@ export async function POST(request: Request) {
       )
     }
 
+    const apiKey = process.env.RESEND_API_KEY
+    const toEmail = process.env.CONTACT_EMAIL_TO
+
+    if (!apiKey || !toEmail) {
+      console.error(
+        '[contact] RESEND_API_KEY ou CONTACT_EMAIL_TO não configurados.',
+      )
+      return NextResponse.json(
+        {
+          error:
+            'Serviço de e-mail ainda não configurado. Tente novamente mais tarde ou fale conosco pelo WhatsApp.',
+        },
+        { status: 500 },
+      )
+    }
+
+    const resend = new Resend(apiKey)
     const periodLabel = PERIOD_LABELS[contactPeriod] ?? contactPeriod
 
     await resend.emails.send({
       // Antes de ir para produção: troque pelo remetente do seu domínio
       // verificado no Resend (ex: 'Clínica Dr. Paulo Sérgio <contato@seudominio.com.br>')
       from: 'Site Clínica <onboarding@resend.dev>',
-      to: process.env.CONTACT_EMAIL_TO ?? '',
-      replyTo: phone ? undefined : undefined,
+      to: toEmail,
       subject: `Nova solicitação de contato — ${name}`,
       text: [
         `Nome: ${name}`,
