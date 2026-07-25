@@ -1,5 +1,9 @@
-// TODO: replace with the real production domain once it's registered/deployed.
-export const siteUrl = 'https://www.clinicapaulosergiomoreira.com.br'
+// Lê a URL real de uma variável de ambiente (NEXT_PUBLIC_SITE_URL), com
+// fallback para a URL atual do deploy na Vercel. Quando o domínio definitivo
+// (ex: clinicapaulosergiomoreira.com.br) estiver registrado, basta configurar
+// essa variável no painel da Vercel — não precisa editar este arquivo.
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://clinicapaulosergiomoreira.vercel.app'
 
 export const clinic = {
   name: 'Clínica Odontológica Dr. Paulo Sérgio I. Moreira',
@@ -29,6 +33,11 @@ export const clinic = {
   ],
   mapEmbed:
     'https://www.google.com/maps?q=Rua+Santos+Dumont+401+Centro+Pelotas+RS&output=embed',
+  // Link de busca do Google Maps a partir do nome + endereço da clínica.
+  // TODO: se você tiver o link de "Compartilhar" direto da ficha do Google
+  // Meu Negócio (ou o place_id), substitua por ele aqui — é mais preciso.
+  mapsUrl:
+    'https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Odontol%C3%B3gica+Dr.+Paulo+S%C3%A9rgio+I.+Moreira+Rua+Santos+Dumont+401+Pelotas+RS',
 }
 
 const defaultMessage =

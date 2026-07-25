@@ -1,11 +1,12 @@
-import Image from 'next/image'
-import { WhatsappCta } from '@/components/whatsapp-cta'
+import Image from "next/image";
+import { WhatsappCta } from "@/components/whatsapp-cta";
 
 const partners = [
-  { name: 'PrevPel', src: '/images/conv-prevpel.png' },
-  { name: 'Uniodonto', src: '/images/conv-uniodonto.png' },
-  { name: 'SindPRS', src: '/images/conv-sinprors.png' },
-]
+  { name: "PrevPel", src: "/images/conv-prevpel.png" },
+  { name: "Uniodonto", src: "/images/conv-uniodonto.png" },
+  { name: "SindPRS", src: "/images/conv-sinprors.png" },
+  { name: "Cabergs", src: "/images/conv-cabergs.png" },
+];
 
 function LogoChip({ name, src }: { name: string; src: string }) {
   return (
@@ -18,11 +19,11 @@ function LogoChip({ name, src }: { name: string; src: string }) {
         className="h-8 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
       />
     </div>
-  )
+  );
 }
 
 export function InsurancePlans() {
-  const loop = [...partners, ...partners, ...partners, ...partners]
+  const loop = [...partners, ...partners, ...partners, ...partners];
 
   return (
     <section id="convenios" className="scroll-mt-20 bg-[var(--surface)]">
@@ -42,7 +43,11 @@ export function InsurancePlans() {
         <div className="relative mt-10 overflow-hidden">
           <div className="flex w-max animate-marquee gap-6">
             {loop.map((partner, i) => (
-              <LogoChip key={`${partner.name}-${i}`} name={partner.name} src={partner.src} />
+              <LogoChip
+                key={`${partner.name}-${i}`}
+                name={partner.name}
+                src={partner.src}
+              />
             ))}
           </div>
           <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[var(--surface)] to-transparent" />
@@ -58,5 +63,5 @@ export function InsurancePlans() {
         </div>
       </div>
     </section>
-  )
+  );
 }

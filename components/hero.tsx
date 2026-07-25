@@ -5,7 +5,7 @@ import { WhatsappCta } from "@/components/whatsapp-cta";
 export function Hero() {
   return (
     <section id="inicio" className="scroll-mt-20 bg-background">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:py-20 lg:grid-cols-[1fr_1.35fr] lg:gap-12 lg:px-6">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-8 pb-10 md:pt-12 md:pb-14 lg:grid-cols-[1fr_1.35fr] lg:gap-12 lg:px-6">
         <div className="flex min-w-0 flex-col items-start gap-6 text-center lg:text-left">
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-secondary px-4 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-primary lg:mx-0">
             Odontologia no centro de Pelotas
@@ -28,7 +28,7 @@ export function Hero() {
               href="#servicos"
               className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-border px-7 py-3.5 text-base font-medium text-foreground transition-colors hover:border-primary hover:text-primary sm:w-auto"
             >
-              Ver Serviços
+              Ver Especialidades
             </a>
           </div>
 

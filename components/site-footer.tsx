@@ -4,18 +4,20 @@ import { InstagramIcon, FacebookIcon } from '@/components/icons'
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-[var(--surface)]">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 lg:px-6">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div className="flex items-center gap-3">
+    <footer className="relative overflow-hidden border-t border-border bg-[var(--surface)]">
+      <div aria-hidden className="absolute inset-x-0 top-0 h-8 bg-primary md:h-10" />
+
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-8 pt-8 lg:px-6 md:pt-10">
+        <div className="flex flex-col gap-4 md:min-h-28 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3 self-start md:self-start">
             <Image
               src="/images/logo-header.png"
               alt="Clínica Odontológica Dr. Paulo Sérgio I. Moreira"
               width={220}
               height={220}
-              className="h-16 w-auto object-contain md:h-20"
+              className="-mt-1.5 h-16 w-auto object-contain md:-mt-2 md:h-20"
             />
-            <span className="flex flex-col leading-tight">
+            <span className="flex flex-col justify-center leading-tight">
               <span className="font-serif text-base font-bold text-foreground">
                 Dr. Paulo Sérgio I. Moreira
               </span>
@@ -25,7 +27,7 @@ export function SiteFooter() {
             </span>
           </div>
 
-          <div className="text-sm leading-relaxed text-muted-foreground">
+          <div className="text-sm leading-relaxed text-muted-foreground md:text-right">
             <p>{clinic.address.street}</p>
             <p>
               {clinic.address.city} — {clinic.address.zip}
@@ -57,7 +59,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-6 text-center text-xs text-muted-foreground">
+        <div className="border-t border-border pt-3 text-center text-xs text-muted-foreground">
           <p>
             © {new Date().getFullYear()} {clinic.name}. Todos os direitos
             reservados.

@@ -6,7 +6,7 @@ type Props = {
   label?: string
   message?: string
   className?: string
-  variant?: 'solid' | 'outline'
+  variant?: 'solid' | 'outline' | 'onDark'
   size?: 'default' | 'lg'
 }
 
@@ -25,9 +25,12 @@ export function WhatsappCta({
       className={cn(
         'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
         size === 'lg' ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm',
-        variant === 'solid'
-          ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-          : 'border border-primary text-primary hover:bg-primary hover:text-primary-foreground',
+        variant === 'solid' &&
+          'bg-primary text-primary-foreground hover:bg-primary/90',
+        variant === 'outline' &&
+          'border border-primary text-primary hover:bg-primary hover:text-primary-foreground',
+        variant === 'onDark' &&
+          'border border-transparent bg-white text-primary hover:border-primary/20 hover:bg-secondary',
         className,
       )}
     >

@@ -3,7 +3,7 @@ import Image from 'next/image'
 export function About() {
   return (
     <section id="sobre" className="scroll-mt-20 bg-background">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:py-20 lg:grid-cols-2 lg:gap-14 lg:px-6">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-6 pb-16 md:pt-8 md:pb-20 lg:grid-cols-2 lg:gap-14 lg:px-6">
         <div className="order-2 overflow-hidden rounded-2xl border border-border shadow-sm lg:order-1">
           <Image
             src="/images/about-facility.png"
